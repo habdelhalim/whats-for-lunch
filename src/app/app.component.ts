@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import 'firebase/firestore';
 
 
 @Component({
@@ -10,9 +7,7 @@ import 'firebase/firestore';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    items: Observable<any[]>;
     title = 'whats-for-lunch';
-    constructor(firestore: AngularFirestore) {
-        this.items = firestore.collection('items').valueChanges();
+    constructor() {
     }
 }

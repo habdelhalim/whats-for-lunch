@@ -6,10 +6,16 @@ import {AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { MealSelectorComponent } from './meal-selector/meal-selector.component';
+import { RestaurantSelectorComponent } from './restaurant-selector/restaurant-selector.component';
+import { MealsListComponent } from './meals-list/meals-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MealSelectorComponent,
+    RestaurantSelectorComponent,
+    MealsListComponent
   ],
   imports: [
     BrowserModule,
