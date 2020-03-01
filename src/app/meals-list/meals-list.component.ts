@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderService} from '../order.service';
 import {Observable} from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
-import 'firebase/firestore';
-
 
 @Component({
   selector: 'app-meals-list',
@@ -11,8 +9,8 @@ import 'firebase/firestore';
 })
 export class MealsListComponent implements OnInit {
   items: Observable<any[]>;
-  constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('items').valueChanges();
+  constructor(orderservice: OrderService) {
+    this.items = orderservice.getItems();
   }
 
   ngOnInit(): void {

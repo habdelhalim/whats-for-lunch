@@ -1,1 +1,1 @@
-Meal: <input name="meal" [name]="name"> <button (click)="add()">add</button>
+Meal: <input #mealName> <button (click)="add(mealName.value); mealName.value=''">add</button>
