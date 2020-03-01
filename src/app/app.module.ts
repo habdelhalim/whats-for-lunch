@@ -9,6 +9,8 @@ import { environment } from '../environments/environment';
 import { MealSelectorComponent } from './meal-selector/meal-selector.component';
 import { RestaurantSelectorComponent } from './restaurant-selector/restaurant-selector.component';
 import { MealsListComponent } from './meals-list/meals-list.component';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import {AuthService} from './auth.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { MealsListComponent } from './meals-list/meals-list.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

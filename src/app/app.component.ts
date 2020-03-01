@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from './auth.service';
 
 
 @Component({
@@ -7,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'whats-for-lunch';
-    constructor() {
-    }
+  title = 'whats-for-lunch';
+
+  constructor(public authService: AuthService) {
+  }
+
+  doLogin() {
+    this.authService.doLogin();
+  }
 }
