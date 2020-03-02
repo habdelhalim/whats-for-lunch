@@ -1,6 +1,11 @@
-<h2>Meals</h2>
-<ul class="meals">
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}} | {{item.createdBy}}
-  </li>
-</ul>
+<h3>Meals</h3>
+<div class="row">
+  <div class="column">
+    <ul class="meals">
+      <li class="text" *ngFor="let item of items | async">
+        {{item.name}} | {{item.createdBy}}
+      </li>
+    </ul>
+  </div>
+</div>
+

@@ -8,12 +8,9 @@ import {AuthService} from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'whats-for-lunch';
+  restaurant: string;
 
-  constructor(public authService: AuthService) {
+  constructor() {
   }
 
-  doLogin() {
-    this.authService.doLogin();
-  }
 }

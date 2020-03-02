@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {OrderService} from '../order.service';
+
 
 @Component({
   selector: 'app-meal-selector',
@@ -7,6 +8,7 @@ import {OrderService} from '../order.service';
   styleUrls: ['./meal-selector.component.css']
 })
 export class MealSelectorComponent implements OnInit {
+  @Input('restaurant') restaurant: string;
   private service: OrderService;
 
   constructor(orderService: OrderService) {
@@ -18,6 +20,6 @@ export class MealSelectorComponent implements OnInit {
 
   add(mealName: string) {
     console.log(mealName);
-    this.service.addItem(mealName);
+    this.service.addItem(mealName, this.restaurant);
   }
 }

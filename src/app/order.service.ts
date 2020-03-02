@@ -16,7 +16,7 @@ export class OrderService {
     return this.collection.valueChanges();
   }
 
-  addItem(item) {
-    return this.collection.push({name: item});
+  addItem(item, restaurant) {
+    return this.collection.push({name: item, restaurant: restaurant});
   }
 }

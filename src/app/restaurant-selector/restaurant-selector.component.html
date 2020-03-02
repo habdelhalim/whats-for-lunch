@@ -1,8 +1,13 @@
-<div id="restaurant-selector">
-  Restaurant:
-  <select>
-    <option selected="selected">{{restaurant}}</option>
-  </select>
+<label for="restaurant">Restaurant:</label>
+<div class="row">
+  <div class="column">
+    <select name="restaurant">
+      <option *ngFor="let restaurant of restaurants| async">
+        {{restaurant.name}}
+      </option>
+    </select>
+  </div>
 </div>
+
 
 

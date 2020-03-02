@@ -11,13 +11,15 @@ import { RestaurantSelectorComponent } from './restaurant-selector/restaurant-se
 import { MealsListComponent } from './meals-list/meals-list.component';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthService} from './auth.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MealSelectorComponent,
     RestaurantSelectorComponent,
-    MealsListComponent
+    MealsListComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
-<div id="app">
-  <h2>{{title}}</h2>
-  <button (click)="doLogin()">login</button>
-  <app-restaurant-selector></app-restaurant-selector>
-  <app-meal-selector></app-meal-selector>
-  <app-meals-list></app-meals-list>
-
+<div id="app" class="container">
+  <app-toolbar title="What's for lunch"></app-toolbar>
+  <fieldset>
+    <app-restaurant-selector></app-restaurant-selector>
+    <app-meal-selector [restaurant]="restaurant"></app-meal-selector>
+    <app-meals-list></app-meals-list>
+  </fieldset>
   <router-outlet></router-outlet>
 </div>
