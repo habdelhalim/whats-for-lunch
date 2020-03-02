@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthService} from './auth.service';
-
+import {Restaurant} from '../model/restaurant';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import {AuthService} from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  restaurant: string;
+  restaurant: Restaurant;
 
   constructor() {
   }

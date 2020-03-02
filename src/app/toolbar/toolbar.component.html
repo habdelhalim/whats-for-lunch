@@ -1,5 +1,14 @@
 <div id="toolbar">
-  <h2 class="float-left">{{title}}</h2>
-  <button class="float-right button button-outline" (click)="doLogin()">login</button>
+  <div class="row">
+    <div class="column column-80">
+      <h2>{{title}}</h2>
+      <nav>
+        <a routerLink="/">home</a> |
+        <a routerLink="/restaurants">restaurants</a>
+      </nav>
+    </div>
+    <div class="column column-20">
+      <button class="float-right button button-outline" (click)="doLogin()">login</button>
+    </div>
+  </div>
 </div>
-<div class="clearfix"></div>

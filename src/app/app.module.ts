@@ -12,6 +12,8 @@ import { MealsListComponent } from './meals-list/meals-list.component';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthService} from './auth.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { SelectMealComponent } from './select-meal/select-meal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MealSelectorComponent,
     RestaurantSelectorComponent,
     MealsListComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    RestaurantsComponent,
+    SelectMealComponent
   ],
   imports: [
     BrowserModule,

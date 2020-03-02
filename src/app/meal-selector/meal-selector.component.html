@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="column column-90">
-    <input type="text" #mealName>
+    <input type="text" #mealName (keyup.enter)="add(mealName.value); mealName.value=''">
   </div>
   <div class="column column-10">
     <button (click)="add(mealName.value); mealName.value=''">add</button>
