@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
-import {Restaurant} from '../model/restaurant';
+import {Restaurant} from './model/restaurant';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
