@@ -22,5 +22,8 @@ export class RestaurantEditComponent implements OnInit {
 
   delete() {
     this.service.remove(this.restaurant.id);
+    this.restaurant = {
+      id: null, name: 'new restaurant'
+    };
   }
 }

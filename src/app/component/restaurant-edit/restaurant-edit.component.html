@@ -3,7 +3,7 @@
 <fieldset>
   <label for="name">Name:</label>
   <input id="name" type="text" [(ngModel)]="restaurant.name" placeholder="name">
-  <input type="submit" class="button button-outline" value="save" (click)="save()"> |
+  <input type="submit" class="button" value="save" (click)="save()"> |
   <input type="submit" class="button button-outline" value="delete" (click)="delete()" *ngIf="restaurant.id">
 </fieldset>
 
