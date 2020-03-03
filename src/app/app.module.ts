@@ -6,14 +6,14 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
-import {MealSelectorComponent} from './meal-selector/meal-selector.component';
-import {MealsListComponent} from './meals-list/meals-list.component';
+import {MealSelectorComponent} from './component/meal-selector/meal-selector.component';
+import {MealsListComponent} from './component//meals-list/meals-list.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AuthService} from './auth.service';
-import {ToolbarComponent} from './toolbar/toolbar.component';
-import {RestaurantsComponent} from './restaurants/restaurants.component';
-import {SelectMealComponent} from './select-meal/select-meal.component';
-import {RestaurantEditComponent} from './restaurant-edit/restaurant-edit.component';
+import {AuthService} from './service/auth.service';
+import {ToolbarComponent} from './component//toolbar/toolbar.component';
+import {RestaurantsComponent} from './component//restaurants/restaurants.component';
+import {SelectMealComponent} from './component//select-meal/select-meal.component';
+import {RestaurantEditComponent} from './component/restaurant-edit/restaurant-edit.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({

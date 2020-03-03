@@ -7,8 +7,6 @@ import {Restaurant} from './model/restaurant';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  restaurant: Restaurant;
-
   constructor() {
   }
 
