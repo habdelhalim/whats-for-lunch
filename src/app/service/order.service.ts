@@ -1,22 +1,27 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import 'firebase/database';
+import {Order} from '../model/order';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private collection: AngularFireList<unknown>;
+  private dbRef: AngularFireList<Order>;
 
   constructor(database: AngularFireDatabase) {
-    this.collection = database.list('items');
+    this.dbRef = database.list<Order>('orders');
   }
 
-  getItems() {
-    return this.collection.valueChanges();
+  list() {
+    return this.dbRef.valueChanges();
   }
 
-  addItem(item, restaurant) {
-    return this.collection.push({name: item, restaurant: restaurant});
+  add(order, restaurant) {
+    return this.dbRef.push({description: order, restaurant: restaurant, author: 'me'});
+  }
+
+  remove() {
+    this.dbRef.remove();
   }
 }

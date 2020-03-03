@@ -13,7 +13,7 @@ export class RestaurantsComponent implements OnInit {
   selectedRestaurant: Restaurant;
 
   constructor(private service: RestaurantService) {
-    this.restaurants = service.getList();
+    this.restaurants = service.list();
   }
 
   ngOnInit(): void {

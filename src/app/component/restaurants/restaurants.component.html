@@ -8,8 +8,9 @@
     </select>
   </div>
   <div class="column column-25">
-    <button class="button button-outline" (click)="create()" *ngIf="selectedRestaurant == null || selectedRestaurant.id != null">new</button>
-    | <button class="button button-outline" (click)="clearDB()">clear DB</button>
+    <button class="button button-outline" (click)="create()">new</button>
+    |
+    <button class="button button-outline" (click)="clearDB()">clear DB</button>
   </div>
 </div>
 <app-restaurant-edit [restaurant]="selectedRestaurant" *ngIf="selectedRestaurant"></app-restaurant-edit>
