@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class RestaurantService {
   private dbRef: AngularFireList<Restaurant>;
-  private restaurants: Observable<any[]>;
+  restaurants: Observable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
     this.dbRef = database.list<Restaurant>('restaurants');

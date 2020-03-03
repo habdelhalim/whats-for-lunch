@@ -10,10 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class RestaurantsComponent implements OnInit {
   restaurants: Observable<any[]>;
-  selectedRestaurant: Restaurant = {
-    id: null,
-    name: 'new Restaurant'
-  };
+  selectedRestaurant: Restaurant;
 
   constructor(private service: RestaurantService) {
     this.restaurants = service.getList();
