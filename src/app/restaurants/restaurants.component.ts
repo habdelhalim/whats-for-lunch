@@ -12,7 +12,7 @@ export class RestaurantsComponent implements OnInit {
   restaurants: Observable<any[]>;
   selectedRestaurant: Restaurant = {
     id: null,
-    name: 'dummy'
+    name: 'new Restaurant'
   };
 
   constructor(private service: RestaurantService) {
@@ -28,5 +28,12 @@ export class RestaurantsComponent implements OnInit {
 
   clearDB() {
     this.service.clear();
+  }
+
+  create() {
+    this.selectedRestaurant = {
+      id: null,
+      name: 'new Restaurant'
+    };
   }
 }

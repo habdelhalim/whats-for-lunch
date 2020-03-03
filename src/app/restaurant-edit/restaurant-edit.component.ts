@@ -19,4 +19,8 @@ export class RestaurantEditComponent implements OnInit {
   save() {
     this.service.save(this.restaurant);
   }
+
+  delete() {
+    this.service.remove(this.restaurant.id);
+  }
 }

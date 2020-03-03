@@ -1,13 +1,14 @@
 <label for="restaurant">Restaurant:</label>
 <div class="row">
-  <div class="column column-90">
+  <div class="column column-75">
     <select id="restaurant" [(ngModel)]="selectedRestaurant" (ngModelChange)="log()">
       <option *ngFor="let rest of restaurants| async" [ngValue]="rest">
-        {{rest.id}} {{rest.name}}
+        {{rest.name}}
       </option>
     </select>
   </div>
-  <div class="column column-10">
+  <div class="column column-25">
+    <button class="button button-outline" (click)="create()" *ngIf="selectedRestaurant.id != null">new</button> |
     <button class="button button-outline" (click)="clearDB()">clear DB</button>
   </div>
 </div>
