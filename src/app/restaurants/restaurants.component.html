@@ -1,1 +1,14 @@
-<p>restaurants works!</p>
+<label for="restaurant">Restaurant:</label>
+<div class="row">
+  <div class="column column-90">
+    <select id="restaurant" [(ngModel)]="selectedRestaurant" (ngModelChange)="log()">
+      <option *ngFor="let rest of restaurants| async" [ngValue]="rest">
+        {{rest.id}} {{rest.name}}
+      </option>
+    </select>
+  </div>
+  <div class="column column-10">
+    <button class="button button-outline" (click)="clearDB()">clear DB</button>
+  </div>
+</div>
+<app-restaurant-edit [restaurant]="selectedRestaurant"></app-restaurant-edit>

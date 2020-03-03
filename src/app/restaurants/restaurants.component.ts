@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Restaurant} from '../../model/restaurant';
+import {RestaurantService} from '../restaurant.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-restaurants',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurants.component.css']
 })
 export class RestaurantsComponent implements OnInit {
+  restaurants: Observable<any[]>;
+  selectedRestaurant: Restaurant = {
+    id: null,
+    name: 'dummy'
+  };
 
-  constructor() { }
+  constructor(private service: RestaurantService) {
+    this.restaurants = service.getList();
+  }
 
   ngOnInit(): void {
   }
 
+  log() {
+    console.log('changing module:' + this.selectedRestaurant);
+  }
+
+  clearDB() {
+    this.service.clear();
+  }
 }

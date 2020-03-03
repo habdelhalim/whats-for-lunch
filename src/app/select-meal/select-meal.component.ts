@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Restaurant} from '../../model/restaurant';
 
 @Component({
   selector: 'app-select-meal',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-meal.component.css']
 })
 export class SelectMealComponent implements OnInit {
+  restaurant: Restaurant;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
