@@ -9,7 +9,7 @@
 
 <fieldset>
   <label for="meal">Meal</label>
-  <input type="text" id="meal" #meal (keyup.enter)="add(meal.value); meal.value = ''">
+  <input type="text" id="meal" [(ngModel)]="currentOrder.description" (keyup.enter)="add()">
 </fieldset>
 <ul>
   <li *ngFor="let order of orders| async">

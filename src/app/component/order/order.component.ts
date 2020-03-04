@@ -15,19 +15,31 @@ export class OrderComponent implements OnInit {
     name: 'selected restaurant'
   };
   orders: Observable<Order[]>;
+  currentOrder: Order;
 
   constructor(private service: OrderService) {
     this.orders = service.list();
+    this.reset();
   }
 
   ngOnInit(): void {
   }
 
-  add(meal: string) {
-    this.service.add(meal, this.restaurant);
+  add() {
+    this.service.add(this.currentOrder);
+    this.reset();
   }
 
   empty() {
     this.service.remove();
+  }
+
+  reset() {
+    this.currentOrder = {
+      id: null,
+      restaurant: this.restaurant,
+      author: 'me',
+      description: ''
+    };
   }
 }
