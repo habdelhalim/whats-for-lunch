@@ -3,6 +3,6 @@
 # @Creatd : 2020-03-01.
 # @Revision:    0.0
 
-ng build --prod=true --baseHref=https://habdelhalim.github.io/whats-for-lunch/dist/whats-for-lunch/
+ng build --prod=true --baseHref=https://habdelhalim.github.io/whats-for-lunch/dist/
 
 # vi: 
