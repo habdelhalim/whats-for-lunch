@@ -13,6 +13,7 @@ import {RestaurantsComponent} from './component//restaurants/restaurants.compone
 import {RestaurantEditComponent} from './component/restaurant-edit/restaurant-edit.component';
 import {FormsModule} from '@angular/forms';
 import {OrderComponent} from './component/order/order.component';
+import { TodaySelectionComponent } from './component/today-selection/today-selection.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {OrderComponent} from './component/order/order.component';
     ToolbarComponent,
     RestaurantsComponent,
     RestaurantEditComponent,
-    OrderComponent
+    OrderComponent,
+    TodaySelectionComponent
   ],
   imports: [
     BrowserModule,

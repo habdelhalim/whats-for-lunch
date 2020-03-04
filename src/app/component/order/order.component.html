@@ -1,9 +1,9 @@
 <div class="row row-no-padding">
   <div class="column">
-    <h3>Order now from (<strong>{{restaurant.name}}</strong>) !!</h3>
+    <h3>Order now from (<strong>{{restaurant?.name}}</strong>) !!</h3>
     <fieldset>
       <label for="meal">Meal</label>
-      <input type="text" id="meal" placeholder="Description..." [(ngModel)]="currentOrder.description">
+      <input type="text" id="meal" placeholder="Description..." [(ngModel)]="currentOrder.description" (keyup.enter)="add()">
       <label for="author">Name</label>
       <input type="text" id="author" placeholder="Name..." [(ngModel)]="currentOrder.author">
       <label for="quantity">Quantity</label>
@@ -23,7 +23,7 @@
   <div class="column">
     <ul>
       <li *ngFor="let order of orders| async">
-        {{order.description}} ({{order.quantity}}) <small>{{order.author}}</small>
+        {{order.description}} ({{order.quantity}}) <small>{{order.author}}</small> | {{order.restaurant.name}}
       </li>
     </ul>
   </div>

@@ -1,0 +1,8 @@
+<fieldset>
+  <label for="restaurant">Today's restaurant</label>
+  <select id="restaurant" [(ngModel)]="todayRestaurant" (ngModelChange)="updateSelection()">
+    <option *ngFor="let rest of restaurants| async" [ngValue]="rest" [selected]="todayRestaurant.id == rest.id">
+      {{rest.name}}
+    </option>
+  </select>
+</fieldset>

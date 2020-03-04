@@ -3,6 +3,7 @@ import {Restaurant} from '../../model/restaurant';
 import {OrderService} from '../../service/order.service';
 import {Observable} from 'rxjs';
 import {Order} from '../../model/order';
+import {TodaySelectionService} from '../../service/todayselection.service';
 
 @Component({
   selector: 'app-order',
@@ -10,18 +11,16 @@ import {Order} from '../../model/order';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  restaurant: Restaurant = {
-    id: null,
-    name: 'selected restaurant'
-  };
+  restaurant: Restaurant;
   orders: Observable<Order[]>;
   currentOrder: Order;
 
-  constructor(private service: OrderService) {
+  constructor(private service: OrderService, private selection: TodaySelectionService) {
   }
 
   ngOnInit(): void {
     this.orders = this.service.list();
+    this.restaurant = this.selection.getRestaurant();
     this.reset();
   }
 
