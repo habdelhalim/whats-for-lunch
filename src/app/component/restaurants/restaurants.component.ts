@@ -13,10 +13,10 @@ export class RestaurantsComponent implements OnInit {
   selectedRestaurant: Restaurant;
 
   constructor(private service: RestaurantService) {
-    this.restaurants = service.list();
   }
 
   ngOnInit(): void {
+    this.restaurants = this.service.list();
   }
 
   log() {
