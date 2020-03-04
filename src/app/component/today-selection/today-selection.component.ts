@@ -18,12 +18,14 @@ export class TodaySelectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.todayRestaurant = this.service.getRestaurant();
     this.restaurants = this.restaurantService.list();
+    this.service.getRestaurant()
+      .subscribe(value => {
+        this.todayRestaurant = value[0];
+      });
   }
 
   updateSelection() {
-    console.log('changing default' + this.todayRestaurant);
     this.service.setRestaurant(this.todayRestaurant);
   }
 }

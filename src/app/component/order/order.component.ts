@@ -20,7 +20,10 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orders = this.service.list();
-    this.restaurant = this.selection.getRestaurant();
+    this.selection.getRestaurant()
+      .subscribe(value => {
+        this.restaurant = value[0];
+      });
     this.reset();
   }
 

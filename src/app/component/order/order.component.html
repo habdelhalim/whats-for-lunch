@@ -1,6 +1,6 @@
-<div class="row row-no-padding">
+<div class="row row-no-padding" *ngIf="restaurant">
   <div class="column">
-    <h3>Order now from (<strong>{{restaurant?.name}}</strong>) !!</h3>
+    <h4>Order now from (<strong>{{restaurant?.name}}</strong>) !!</h4>
     <fieldset>
       <label for="meal">Meal</label>
       <input type="text" id="meal" placeholder="Description..." [(ngModel)]="currentOrder.description" (keyup.enter)="add()">
