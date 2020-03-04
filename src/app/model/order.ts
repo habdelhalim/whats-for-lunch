@@ -1,8 +1,9 @@
 import {Restaurant} from './restaurant';
 
 export interface Order {
-  id: string;
+  id?: string;
   description: string;
   restaurant: Restaurant;
   author: string;
+  quantity: number;
 }

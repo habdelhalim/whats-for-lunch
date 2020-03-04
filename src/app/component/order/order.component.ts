@@ -18,11 +18,11 @@ export class OrderComponent implements OnInit {
   currentOrder: Order;
 
   constructor(private service: OrderService) {
-    this.orders = service.list();
-    this.reset();
   }
 
   ngOnInit(): void {
+    this.orders = this.service.list();
+    this.reset();
   }
 
   add() {
@@ -36,10 +36,10 @@ export class OrderComponent implements OnInit {
 
   reset() {
     this.currentOrder = {
-      id: null,
       restaurant: this.restaurant,
       author: 'me',
-      description: ''
+      description: '',
+      quantity: 1
     };
   }
 }
