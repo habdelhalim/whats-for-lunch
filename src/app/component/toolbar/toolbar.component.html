@@ -1,15 +1,13 @@
 <div id="toolbar">
-  <div class="row">
-    <div class="column column-80">
+  <div class="row row-no-padding">
+    <div class="column">
       <h2>{{title}}</h2>
+      <button class="button button-outline" (click)="doLogin()">login</button>
       <nav>
         <a routerLink="/">Home</a> |
         <a routerLink="/today-selection">Today's selection</a> |
         <a routerLink="/restaurants">Restaurants</a>
       </nav>
-    </div>
-    <div class="column column-20">
-      <button class="float-right button button-outline" (click)="doLogin()">login</button>
     </div>
   </div>
 </div>
