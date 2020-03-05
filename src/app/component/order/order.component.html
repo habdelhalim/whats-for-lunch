@@ -23,7 +23,7 @@
   <div class="column">
     <ul>
       <li *ngFor="let order of orders| async">
-        {{order.description}} ({{order.quantity}}) <small>{{order.author}}</small> | {{order.restaurant.name}}
+        {{order.description}} ({{order.quantity}}) <small>{{order.author}}</small> | {{order.restaurant}}
       </li>
     </ul>
   </div>

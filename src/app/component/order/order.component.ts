@@ -23,8 +23,8 @@ export class OrderComponent implements OnInit {
     this.selection.getRestaurant()
       .subscribe(value => {
         this.restaurant = value[0];
+        this.reset();
       });
-    this.reset();
   }
 
   add() {
@@ -37,8 +37,13 @@ export class OrderComponent implements OnInit {
   }
 
   reset() {
+    let restaurantName = 'none';
+    if (this.restaurant) {
+      restaurantName = this.restaurant.name;
+    }
+
     this.currentOrder = {
-      restaurant: this.restaurant,
+      restaurant: restaurantName,
       author: 'me',
       description: '',
       quantity: 1

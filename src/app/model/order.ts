@@ -3,7 +3,7 @@ import {Restaurant} from './restaurant';
 export interface Order {
   id?: string;
   description: string;
-  restaurant: Restaurant;
+  restaurant: string;
   author: string;
   quantity: number;
 }
