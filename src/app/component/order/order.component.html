@@ -15,15 +15,19 @@
 </div>
 <div class="row row-no-padding">
   <div class="column">
-    <h4 class="float-left">Orders</h4>
-    <button class="button button-outline float-right" (click)="empty()" *ngIf="authService.getUser() | async"><i class="fas fa-trash-alt"></i></button>
+    <h4 class="float-left">Order:</h4>
+    <button class="button button-clear float-right" (click)="empty()" *ngIf="authService.getUser() | async"><i class="fas fa-trash-alt fa-2x"></i></button>
   </div>
 </div>
 <div class="row row-no-padding">
   <div class="column">
-    <ul>
+    <ul id="ordersList">
       <li *ngFor="let order of orders| async">
-        {{order.description}} ({{order.quantity}}) <small>{{order.author}}</small> | {{order.restaurant}}
+        <i class="fas fa fa-angle-right"></i>
+        <span class="qty">{{order.quantity}}</span>
+        <span class="desc">{{order.description}}</span>
+        <span class="name">{{order.author}}</span>
+        <span class="restaurant">{{order.restaurant}}</span>
       </li>
     </ul>
   </div>
