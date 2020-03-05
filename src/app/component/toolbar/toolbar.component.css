@@ -9,8 +9,20 @@
 
 #toolbar nav {
   float: left;
-  clear: right;
-  margin: 0px 5px auto;
+  clear: both;
+  margin: 0px auto;
+}
+
+#toolbar nav a {
+  padding: 0 10px;
+}
+
+#toolbar nav a + a {
+  border-left: 1px solid;
+}
+
+nav .active {
+  font-weight: bold;
 }
 
 #toolbar #userInfo {
