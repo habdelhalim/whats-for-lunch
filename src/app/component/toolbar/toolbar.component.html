@@ -2,7 +2,11 @@
   <div class="row row-no-padding">
     <div class="column">
       <h2>{{title}}</h2>
-      <button class="button button-outline" (click)="doLogin()">login</button>
+      <div id="userInfo">
+        <span *ngIf="authService.getUser()|async as user; else loginBtn">
+          {{user.displayName}} <a href="" class="fas fa-sign-out-alt" (click)="logout()"></a>
+        </span>
+      </div>
       <nav>
         <a routerLink="/">Home</a> |
         <a routerLink="/today-selection">Today's selection</a> |
@@ -11,3 +15,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #loginBtn>
+  <button class="button button-outline" (click)="login()">login</button>
+</ng-template>

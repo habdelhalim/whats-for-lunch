@@ -4,6 +4,7 @@ import {OrderService} from '../../service/order.service';
 import {Observable} from 'rxjs';
 import {Order} from '../../model/order';
 import {TodaySelectionService} from '../../service/todayselection.service';
+import {AuthService} from '../../service/auth.service';
 
 @Component({
   selector: 'app-order',
@@ -13,17 +14,33 @@ import {TodaySelectionService} from '../../service/todayselection.service';
 export class OrderComponent implements OnInit {
   restaurant: Restaurant;
   orders: Observable<Order[]>;
-  currentOrder: Order;
+  currentOrder: Order = {
+    restaurant: 'default',
+    quantity: 1,
+    author: 'anonymous',
+    description: ''
+  };
 
-  constructor(private service: OrderService, private selection: TodaySelectionService) {
+  constructor(private service: OrderService,
+              private selection: TodaySelectionService,
+              public authService: AuthService) {
   }
 
   ngOnInit(): void {
     this.orders = this.service.list();
+    this.authService.getUser()
+      .subscribe(user => {
+        if (user) {
+          this.currentOrder.author = user.displayName;
+        }
+      });
+
     this.selection.getRestaurant()
       .subscribe(value => {
         this.restaurant = value[0];
-        this.reset();
+        if (this.restaurant) {
+          this.currentOrder.restaurant = this.restaurant.name;
+        }
       });
   }
 
@@ -37,16 +54,7 @@ export class OrderComponent implements OnInit {
   }
 
   reset() {
-    let restaurantName = 'none';
-    if (this.restaurant) {
-      restaurantName = this.restaurant.name;
-    }
-
-    this.currentOrder = {
-      restaurant: restaurantName,
-      author: 'me',
-      description: '',
-      quantity: 1
-    };
+    this.currentOrder.description = '';
+    this.currentOrder.quantity = 1;
   }
 }

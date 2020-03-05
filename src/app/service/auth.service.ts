@@ -7,11 +7,14 @@ import 'firebase/auth';
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor(private firebaseAuth: AngularFireAuth) {
   }
 
-  doLogin() {
+  getUser() {
+    return this.firebaseAuth.user;
+  }
+
+  login() {
     return new Promise((resolve, reject) => {
       const provider = new firebase.auth.GithubAuthProvider();
       provider.setCustomParameters({allow_signup: 'false'});
@@ -24,5 +27,9 @@ export class AuthService {
           reject(err);
         });
     });
+  }
+
+  logout() {
+    return this.firebaseAuth.signOut();
   }
 }

@@ -14,9 +14,9 @@
   </div>
 </div>
 <div class="row row-no-padding">
-  <div class="column ">
+  <div class="column">
     <h4 class="float-left">Orders</h4>
-    <button class="button float-right" (click)="empty()">Clear</button>
+    <button class="button button-outline float-right" (click)="empty()" *ngIf="authService.getUser() | async"><i class="fas fa-trash-alt"></i></button>
   </div>
 </div>
 <div class="row row-no-padding">
