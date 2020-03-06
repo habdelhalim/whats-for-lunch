@@ -10,11 +10,10 @@ import {Observable} from 'rxjs';
   styleUrls: ['./today-selection.component.css']
 })
 export class TodaySelectionComponent implements OnInit {
-  todayRestaurant: Restaurant;
+  todayRestaurant: Restaurant = {id: null, name: ''};
   restaurants: Observable<Restaurant[]>;
 
   constructor(private service: TodaySelectionService, private restaurantService: RestaurantService) {
-
   }
 
   ngOnInit(): void {
