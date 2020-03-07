@@ -1,12 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 
 import { OrderService } from './order.service';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { of } from 'rxjs';
 
-describe('OrderServiceService', () => {
+describe('OrderService', () => {
   let service: OrderService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    const afDatabaseStub = {
+      list: () => {
+        return { snapshotChanges: () => of([]) }
+      }
+    }
+
+    TestBed.configureTestingModule({
+      providers: [{ provide: AngularFireDatabase, useValue: afDatabaseStub }]
+    });
     service = TestBed.inject(OrderService);
   });
 
