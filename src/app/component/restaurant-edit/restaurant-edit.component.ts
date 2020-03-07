@@ -8,7 +8,7 @@ import {RestaurantService} from '../../service/restaurant.service';
   styleUrls: ['./restaurant-edit.component.css']
 })
 export class RestaurantEditComponent implements OnInit {
-  @Input('restaurant') restaurant: Restaurant;
+  @Input() restaurant: Restaurant;
 
   constructor(private service: RestaurantService) {
   }
