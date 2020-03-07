@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Restaurant } from '../../model/restaurant'
 import { RestaurantEditComponent } from './restaurant-edit.component';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { of } from 'rxjs';

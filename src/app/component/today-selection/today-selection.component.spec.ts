@@ -4,18 +4,26 @@ import { TodaySelectionComponent } from './today-selection.component';
 import { TodaySelectionService } from 'src/app/service/todayselection.service';
 import { RestaurantService } from 'src/app/service/restaurant.service';
 import { of } from 'rxjs';
+import { Restaurant } from 'src/app/model/restaurant';
 
 describe('TodaySelectionComponent', () => {
   let component: TodaySelectionComponent;
   let fixture: ComponentFixture<TodaySelectionComponent>;
 
   beforeEach(async(() => {
+    const rest: Restaurant = {
+      id: '232432',
+      name: 'first'
+    }
+
     const serviceStub = {
-      getRestaurant: () => of({name: 'first restaurant'})
+      getRestaurant: () => of([rest])
     }
 
     const restServiceStub = {
-      list: () => of([])
+      list: () => {
+        return of([]);
+      }
     }
 
     TestBed.configureTestingModule({
