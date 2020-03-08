@@ -14,6 +14,7 @@ import {RestaurantEditComponent} from './component/restaurant-edit/restaurant-ed
 import {FormsModule} from '@angular/forms';
 import {OrderComponent} from './component/order/order.component';
 import { TodaySelectionComponent } from './component/today-selection/today-selection.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodaySelectionComponent } from './component/today-selection/today-selec
     RestaurantsComponent,
     RestaurantEditComponent,
     OrderComponent,
-    TodaySelectionComponent
+    TodaySelectionComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

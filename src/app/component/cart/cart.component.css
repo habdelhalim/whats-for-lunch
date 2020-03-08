@@ -1,0 +1,41 @@
+ul#ordersList {
+    list-style: none;
+    padding-left: 10px;
+  }
+  
+  #ordersList li {
+  }
+  
+  #ordersList .desc {
+  }
+  
+  #ordersList .qty {
+    padding: 0 5px;
+  }
+  
+  #ordersList .qty:before {
+    content: '';
+  }
+  
+  #ordersList .qty:after {
+    content: '';
+  }
+  
+  #ordersList .name {
+    float: right;
+    font-size: 0.7em;
+    padding: 0 5px;
+  }
+  
+  #ordersList .name:before {
+    content: '[';
+  }
+  
+  #ordersList .name:after {
+    content: ']';
+  }
+  
+  #ordersList .restaurant {
+    display: none;
+  }
+  

@@ -1,0 +1,13 @@
+<div class="row row-no-padding">
+    <div class="column">
+      <ul id="ordersList">
+        <li *ngFor="let order of orders| async">
+          <i class="fas fa fa-angle-right"></i>
+          <span class="qty">{{order.quantity}}</span>
+          <span class="desc">{{order.description}}</span>
+          <span class="name">{{order.author}}</span>
+          <span class="restaurant">{{order.restaurant}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>

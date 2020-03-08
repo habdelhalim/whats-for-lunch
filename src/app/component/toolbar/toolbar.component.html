@@ -10,6 +10,7 @@
       <nav>
         <a routerLink="/order-now" routerLinkActive="active">Home</a>
         <a routerLink="/today-selection" *ngIf="authService.getUser()|async" routerLinkActive="active">Today's selection</a>
+        <a routerLink="/today-cart" *ngIf="authService.getUser()|async" routerLinkActive="active">Today's Cart</a>
         <a routerLink="/restaurants" *ngIf="authService.getUser()|async" routerLinkActive="active">Restaurants</a>
       </nav>
     </div>
