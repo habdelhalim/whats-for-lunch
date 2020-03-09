@@ -1,41 +1,69 @@
-ul#ordersList {
-    list-style: none;
-    padding-left: 10px;
-  }
-  
-  #ordersList li {
-  }
-  
-  #ordersList .desc {
-  }
-  
-  #ordersList .qty {
-    padding: 0 5px;
-  }
-  
-  #ordersList .qty:before {
-    content: '';
-  }
-  
-  #ordersList .qty:after {
-    content: '';
-  }
-  
-  #ordersList .name {
-    float: right;
-    font-size: 0.7em;
-    padding: 0 5px;
-  }
-  
-  #ordersList .name:before {
-    content: '[';
-  }
-  
-  #ordersList .name:after {
-    content: ']';
-  }
-  
-  #ordersList .restaurant {
-    display: none;
-  }
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0;
+}
+
+li span {
+  display: inline-block;
+}
+
+li.header, li.total {
+  font-weight: bold;
+}
+
+li input {
+  height: 2.5rem;
+}
+
+/* summary */
+.summary input {
+  margin: 0;
+}
+
+.summary li {
+  width: 100%;
+}
+
+.summary li .desc {
+  width: 80%;
+}
+
+.summary li .qty {
+  width: 10%;
+}
+
+.summary li .price {
+  width: 10%;
+}
+
+/* details */
+
+.details {
+  font-size: smaller;
+  margin: 10px auto;
+}
+
+.details li {
+  width: 100%;
+}
+
+.details li .name {
+  width: 20%;
+}
+
+.details li .desc {
+  width: 60%;
+}
+
+.details li .qty {
+  width: 10%;
+}
+
+.details li .price {
+  width: 10%;
+}
+
   
