@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/service/cart.service';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/model/order';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,10 +14,10 @@ export class CartComponent implements OnInit {
   total: number = 0;
   amount: number = 0;
 
-  constructor(private service: CartService) { }
+  constructor(private service: OrderService) { }
 
   ngOnInit(): void {
-    this.orders = this.service.getCart();
+    this.orders = this.service.list();
     this.orders.subscribe(
       val => val.forEach(order => {
         this.total += Number(order.quantity)

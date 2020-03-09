@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurant } from '../../model/restaurant';
-import { OrderService } from '../../service/order.service';
 import { Observable } from 'rxjs';
 import { Order } from '../../model/order';
-import { TodaySelectionService } from '../../service/todayselection.service';
+import { Restaurant } from '../../model/restaurant';
 import { AuthService } from '../../service/auth.service';
-import { CartService } from 'src/app/service/cart.service';
+import { OrderService } from '../../service/order.service';
+import { TodaySelectionService } from '../../service/todayselection.service';
 
 @Component({
   selector: 'app-order',
@@ -24,7 +23,6 @@ export class OrderComponent implements OnInit {
 
   constructor(private service: OrderService,
     private selection: TodaySelectionService,
-    private cartService: CartService,
     public authService: AuthService) {
   }
 
@@ -58,9 +56,5 @@ export class OrderComponent implements OnInit {
   reset() {
     this.currentOrder.description = '';
     this.currentOrder.quantity = 1;
-  }
-
-  checkout() {
-    this.cartService.checkout(this.orders);
   }
 }
