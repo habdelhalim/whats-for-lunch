@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class OrderService {
   private dbRef: AngularFireList<Order>;
-  private orders: Observable<Order[]>;
+  orders: Observable<Order[]>;
 
   constructor(database: AngularFireDatabase) {
     this.dbRef = database.list<Order>('orders');
@@ -32,7 +32,11 @@ export class OrderService {
     return this.dbRef.update(key, order);
   }
 
-  remove() {
+  remove(order: Order) {
+    return this.dbRef.remove(order.id);
+  }
+
+  clear() {
     this.dbRef.remove();
   }
 }
