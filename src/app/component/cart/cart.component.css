@@ -1,69 +1,29 @@
-ul {
-  list-style: none;
-}
-
-li {
-  margin: 0;
-}
-
-li span {
-  display: inline-block;
-}
-
-li.header, li.total {
-  font-weight: bold;
-}
-
-li input {
-  height: 2.5rem;
-}
-
-/* summary */
+/* details */
 .summary input {
   margin: 0;
 }
-
-.summary li {
-  width: 100%;
-}
-
-.summary li .desc {
-  width: 80%;
-}
-
-.summary li .qty {
-  width: 10%;
-}
-
-.summary li .price {
-  width: 10%;
-}
-
-/* details */
 
 .details {
   font-size: smaller;
   margin: 10px auto;
 }
 
-.details li {
-  width: 100%;
-}
-
-.details li .name {
-  width: 20%;
-}
-
-.details li .desc {
+.desc {
   width: 60%;
 }
 
-.details li .qty {
-  width: 10%;
+.qty {
+  width: 20%;
 }
 
-.details li .price {
-  width: 10%;
+.price {
+  width: 20%;
 }
 
-  
+.name {
+  width: 20%;
+}
+
+.details .desc {
+  width: 40%;
+}

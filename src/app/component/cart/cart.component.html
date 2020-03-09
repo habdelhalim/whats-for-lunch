@@ -1,38 +1,45 @@
 <div class="summary">
-    <h4>Summary:</h4>
-    <ul>
-        <li class="header">
-            <span class="desc">Meal</span>
-            <span class="qty">Quantity</span>
-            <span class="price">Price</span>
-        </li>
-        <li *ngFor="let line of summary| keyvalue">
-            <span class="desc">{{line.key}}</span>
-            <span class="qty">{{line.value.quantity}}</span>
-            <span class="price">
-                <input type="text" (blur)="updateAmount()" [(ngModel)]="line.value.price" placeholder="amount.."></span>
-        </li>
-        <li class="total">
-            <span class="desc">Total</span>
-            <span class="qty">{{total}}</span>
-            <span class="price">{{amount}} JOD</span>
-        </li>
-    </ul>
+  <h4>Summary:</h4>
+  <table>
+    <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let line of summary| keyvalue">
+      <td class="desc">{{line.key}}</td>
+      <td class="qty">{{line.value.quantity}}</td>
+      <td class="price"><input type="text" (blur)="updateAmount()" [(ngModel)]="line.value.price" placeholder="amount.."></td>
+    </tr>
+    <tr>
+      <td class="desc">Total</td>
+      <td class="qty">{{total}}</td>
+      <td class="price">{{amount}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 <div class="details">
-    <h4>Details:</h4>
-    <ul>
-        <li class="header">
-            <span class="name">Name</span>
-            <span class="desc">Meal</span>
-            <span class="qty">Quantity</span>
-            <span class="price">Price</span>
-        </li>
-        <li *ngFor="let order of orders| async">
-            <span class="name">{{order.author}}</span>
-            <span class="desc">{{order.description}}</span>
-            <span class="qty">{{order.quantity}}</span>
-            <span class="price">{{summary[order.description].price * order.quantity}} JOD</span>
-        </li>
-    </ul>
+  <h4>Details:</h4>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Meal</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders| async">
+      <td class="name">{{order.author}}</td>
+      <td class="desc">{{order.description}}</td>
+      <td class="qty">{{order.quantity}}</td>
+      <td class="price">{{summary[order.description].price * order.quantity}} JOD</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
